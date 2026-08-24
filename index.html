@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person ❤️</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS STYLES */
+        :root {
+            --bg-dark-gradient: linear-gradient(135deg, #09081a 0%, #030209 100%);
+            --rose-pink: #ff758f;
+            --rose-dark: #ff4d6d;
+            --rose-light: #ffb3c1;
+            --gold-accent: #ffd166;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-light: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: var(--bg-dark-gradient);
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030209;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--rose-pink);
+            border-radius: 4px;
+        }
+
+        /* Typography */
+        h1, h2, h3, .cursive-font {
+            font-family: 'Great Vibes', cursive;
+            color: var(--rose-pink);
+        }
+
+        h2.section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 117, 143, 0.3);
+        }
+
+        h2.section-title::after {
+            content: '✿';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--rose-light);
+            margin-top: 0.5rem;
+        }
+
+        p.serif-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: #e9ecef;
+        }
+
+        /* Backgound Canvas for Particle Systems */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Star Background Effect */
+        .star-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 8px #fff; }
+        }
+
+        /* Glassmorphism Container */
+        .glass-card {
+            background: var(--glass-white);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Buttons Styling */
+        .btn-romantic {
+            background: linear-gradient(45deg, var(--rose-pink), var(--rose-dark));
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 117, 143, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-romantic:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 117, 143, 0.7), 0 0 10px var(--gold-accent);
+            background: linear-gradient(45deg, var(--rose-dark), #ff758f);
+        }
+
+        .btn-romantic:active {
+            transform: translateY(-1px);
+        }
+
+        /* --- SCREEN 1: OPENING SURPRISE SCREEN --- */
+        #opening-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: var(--bg-dark-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 1.2s;
+        }
+
+        .opening-box {
+            text-align: center;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 90%;
+            transform: scale(1);
+            transition: transform 1s ease;
+        }
+
+        .opening-box h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: heartbeat 2s infinite ease-in-out;
+        }
+
+        .opening-box p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #d1d2d6;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        /* --- CONTAINER OF SURPRISE SECTIONS --- */
+        #surprise-content {
+            opacity: 0;
+            display: none;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 5;
+            transition: opacity 1.5s ease-in;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 80px 0;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        /* --- SECTION 2: HEARTFELT LOVE LETTER --- */
+        #love-letter {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+        }
+
+        .letter-container p {
+            margin-bottom: 1.5rem;
+        }
+
+        .letter-container i.fa-quote-left,
+        .letter-container i.fa-quote-right {
+            color: rgba(255, 117, 143, 0.25);
+            font-size: 2.5rem;
+            position: absolute;
+        }
+
+        .letter-container i.fa-quote-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .letter-container i.fa-quote-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Milestone Timer Badge */
+        .live-counter-box {
+            margin-top: 3rem;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 15px;
+            background: rgba(255, 117, 143, 0.08);
+            border: 1px dashed rgba(255, 117, 143, 0.3);
+        }
+
+        .live-counter-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rose-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .live-counter-box .counter-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 0 10px rgba(255, 209, 102, 0.4);
+        }
+
+        /* --- SECTION 3: OUR STORY TIMELINE --- */
+        #our-story {
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Central Timeline Line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--rose-pink), var(--rose-dark), var(--rose-light));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            box-shadow: 0 0 8px rgba(255, 117, 143, 0.3);
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: transparent;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .timeline-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Left/Right Container Positions */
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        /* Pulsing Timeline Circle Indicators */
+        .timeline-container::after {
+            content: '♥';
+            font-family: 'FontAwesome';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -15px;
+            background-color: #0d0b21;
+            border: 2px solid var(--rose-pink);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 10;
+            color: var(--rose-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 0 10px rgba(255, 117, 143, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-right::after {
+            left: -15px;
+        }
+
+        .timeline-container:hover::after {
+            background-color: var(--rose-pink);
+            color: #fff;
+            transform: scale(1.2);
+            box-shadow: 0 0 15px rgba(255, 117, 143, 0.8);
+        }
+
+        /* Timeline Box */
+        .timeline-content {
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 117, 143, 0.15);
+            border-color: var(--rose-pink);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--gold-accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            font-style: normal;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        /* Mobile Timeline Media Queries */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-container::after {
+                left: 15px;
+                right: auto;
+            }
+
+            .timeline-right {
+                left: 0%;
+            }
+        }
+
+        /* --- SECTION 4: REASONS I LOVE YOU --- */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .reason-card {
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reason-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reason-card i.card-icon {
+            font-size: 2rem;
+            color: var(--rose-pink);
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .reason-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Reason Card Hover Animations */
+        .reason-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--rose-pink);
+            box-shadow: 0 15px 30px rgba(255, 117, 143, 0.2);
+        }
+
+        .reason-card:hover i.card-icon {
+            transform: scale(1.3) rotate(-10deg);
+            color: var(--gold-accent);
+        }
+
+        /* Decorative Sparkle inside card */
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .reason-card:hover::before {
+            opacity: 1;
+        }
+
+        /* --- SECTION 5: PHOTO POLAROID GALLERY --- */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        /* Polaroid Card Frame */
+        .polaroid {
+            background-color: white;
+            padding: 15px 15px 25px 15px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            width: 270px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .polaroid.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Slightly rotate polaroids for random natural feel */
+        .polaroid:nth-child(even) {
+            transform: rotate(3deg);
+        }
+
+        .polaroid:nth-child(odd) {
+            transform: rotate(-3deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.08) rotate(0deg) translateY(-10px) !important;
+            box-shadow: 0 15px 35px rgba(255, 117, 143, 0.25);
+            z-index: 15;
+        }
+
+        .polaroid-img-wrapper {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .polaroid:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Caption Text inside Polaroid */
+        .polaroid-caption {
+            font-family: 'Great Vibes', cursive;
+            color: #333333;
+            font-size: 1.8rem;
+            margin-top: 5px;
+            text-shadow: none;
+        }
+
+        /* Placeholder graphic if user doesn't update images */
+        .polaroid-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            gap: 10px;
+        }
+
+        .polaroid-placeholder i {
+            font-size: 2.5rem;
+            color: var(--rose-light);
+        }
+
+        .polaroid-placeholder span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SECTION 6: INTERACTIVE SURPRISE --- */
+        #interactive-gift {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .gift-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            position: relative;
+        }
+
+        .surprise-msg-wrapper {
+            margin-top: 2rem;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .surprise-msg-wrapper.show {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 3rem;
+        }
+
+        .secret-message-box {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--rose-pink);
+            border-radius: 0 15px 15px 0;
+            text-align: left;
+        }
+
+        /* --- SECTION 7: FINAL SCREEN --- */
+        #final-screen {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .glowing-heart-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .glowing-heart {
+            font-size: 6rem;
+            color: var(--rose-pink);
+            animation: pulse-glowing 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+            filter: drop-shadow(0 0 15px rgba(255, 117, 143, 0.8));
+        }
+
+        @keyframes pulse-glowing {
+            0% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 117, 143, 0.6)); }
+            30% { transform: scale(1.15); filter: drop-shadow(0 0 30px rgba(255, 117, 143, 1)) drop-shadow(0 0 10px var(--gold-accent)); }
+            60% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 117, 143, 0.6)); }
+        }
+
+        .final-box h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Spotify Player Widget Container */
+        .spotify-widget-container {
+            margin-top: 5rem;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 1s ease-out 0.5s;
+        }
+
+        .spotify-widget-container.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Subtle Sparkle Footnotes */
+        .footer-note {
+            margin-top: 5rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Simple Fade-In helper classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Particle Overlay Background -->
+    <canvas id="particle-canvas"></canvas>
+    <!-- CSS Star Background Layer -->
+    <div class="star-layer" id="stars-container"></div>
+
+    <!-- --- SCREEN 1: THE OPENING SCREEN --- -->
+    <div id="opening-screen">
+        <div class="opening-box glass-card">
+            <h1 id="intro-greeting">Hey, babu ❤️</h1>
+            <p id="intro-subtitle">I built a little universe of stardust and memories, just for you. Will you explore it with me?</p>
+            <button class="btn-romantic" id="btn-open-surprise">
+                Open Your Surprise <span id="intro-star-icon">✨</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- --- CONTAINER OF SURPRISE SECTIONS --- -->
+    <div id="surprise-content">
+
+        <!-- --- SECTION 2: HEARTFELT LOVE LETTER --- -->
+        <section id="love-letter" class="fade-in-section">
+            <div class="letter-container glass-card">
+                <i class="fa-solid fa-quote-left"></i>
+                <h2 class="cursive-font" style="font-size: 4rem; margin-bottom: 2rem;">My Dearest</h2>
+                <div id="letter-paragraphs-wrapper">
+                    <!-- Paragraphs populated dynamically by config -->
+                </div>
+                <i class="fa-solid fa-quote-right"></i>
+
+                <!-- Animated live counter box -->
+                <div class="live-counter-box" id="milestone-box">
+                    <h3 id="counter-label">Days of Love</h3>
+                    <div class="counter-number" id="love-days-counter">0000</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- SECTION 3: TIMELINE (OUR STORY) --- -->
+        <section id="our-story">
+            <h2 class="section-title">Our Magical Journey</h2>
+            <div class="timeline" id="timeline-wrapper">
+                <!-- Timeline items populated dynamically by config -->
+            </div>
+        </section>
+
+        <!-- --- SECTION 4: REASONS I LOVE YOU --- -->
+        <section id="reasons-why">
+            <h2 class="section-title">Reasons I Love You</h2>
+            <div class="reasons-grid" id="reasons-grid-wrapper">
+                <!-- Reason cards populated dynamically by config -->
+            </div>
+        </section>
+
+        <!-- --- SECTION 5: POLAROID GALLERY --- -->
+        <section id="memory-gallery">
+            <h2 class="section-title">Sweetest Memories</h2>
+            <div class="gallery-container" id="gallery-wrapper">
+                <!-- Polaroid frames populated dynamically by config -->
+            </div>
+        </section>
+
+        <!-- --- SECTION 6: INTERACTIVE SURPRISE --- -->
+        <section id="interactive-gift" class="fade-in-section">
+            <div class="gift-box glass-card">
+                <h2 class="cursive-font" style="font-size: 3.5rem; margin-bottom: 1.5rem;">One More Thing...</h2>
+                <p class="serif-body" style="margin-bottom: 2rem;">Before we reach the end, I have a tiny question and a final promise for you.</p>
+                <button class="btn-romantic" id="btn-reveal-secret">
+                    Click Me <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+
+                <div class="surprise-msg-wrapper" id="secret-message-wrapper">
+                    <div class="secret-message-box">
+                        <p class="serif-body" id="secret-message-text">
+                            "If I had to choose again, I would still choose you. Every single time. ❤️"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- SECTION 7: FINAL SCREEN --- -->
+        <section id="final-screen" class="fade-in-section">
+            <div class="final-box">
+                <div class="glowing-heart-wrapper">
+                    <i class="fa-solid fa-heart glowing-heart"></i>
+                </div>
+                <h2 id="final-closing-quote">
+                    "You are my favorite person, my favorite memory, and my favorite future. ❤️"
+                </h2>
+
+                <!-- Spotify Embed Player Container -->
+                <div class="spotify-widget-container" id="spotify-player-box">
+                    <!-- Populated dynamically if spotify link is set -->
+                </div>
+
+                <div class="footer-note">
+                    Intertwined Eternally • Built with Love
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- --- JAVASCRIPT LOGIC AND CONFIGURATION --- -->
+    <script>
+        /* -------------------------------------------------------------
+           💖 CONFIGURATION OBJECT
+           Simply edit the text and links below to customize your surprise!
+           ------------------------------------------------------------- */
+        const config = {
+            girlfriendName: "Babu", // Name shown on home greeting
+            introSubtitle: "I built a little universe of stardust and memories, just for you. Will you explore it with me? ✨",
+
+            // Set your anniversary date here (Format: YYYY-MM-DD) to enable the live day-counter [290]
+            anniversaryDate: "2024-08-10",
+            counterLabel: "Days of Loving You ❤️",
+
+            // The multi-paragraph heartfelt love letter [315]
+            letterParagraphs: [
+                "From the very first moment my world crossed paths with yours, everything became infinitely brighter. I never expected to fall in love with you so deeply, yet here I am, completely infatuated [9]. You have become my safe haven, my quiet anchor, and the place where my heart feels completely at home [13, 285].",
+                "I am so incredibly thankful for your presence by my side [5]. You bring an ineffable amount of peace, strength, and joy into my life [6]. With you, even the most ordinary days feel like a celestial adventure, written in our stars [4, 16].",
+                "Thank you for being the missing piece that completes my soul [6]. I promise to love you, protect you, and cherish you through every chapter of our lives, forevermore [7, 337]."
+            ],
+
+            // The timeline events (Your Story section) - Add as many as you like! [327]
+            timelineEvents: [
+                {
+                    date: "August 10, 2024 🌸",
+                    title: "The Day We Met",
+                    desc: "Remember that nervous, exciting flutter when we first crossed paths? The alignment of the stars that put us on the same path [4, 19]."
+                },
+                {
+                    date: "October 14, 2024 ✨",
+                    title: "Our First Special Memory",
+                    desc: "Our first sunset walk together. Everything was drenched in gold, and I knew deep down that you were someone extraordinarily special."
+                },
+                {
+                    date: "December 25, 2024 🍿",
+                    title: "A Hilated Funny Moment",
+                    desc: "That silly kitchen disaster when we tried cooking, and ended up laughing on the floor eating takeout. I've never laughed so hard with anyone else."
+                },
+                {
+                    date: "February 14, 2025 💖",
+                    title: "My Favorite Memory",
+                    desc: "The quiet winter night spent looking at the night sky. No words, just holding your hand and knowing you are my home [13, 286]."
+                },
+                {
+                    date: "Today ❤️",
+                    title: "And The Future Ahead",
+                    desc: "With every revolution around the sun, my heart beat grows stronger for you. I look forward to creating endless memories with you [5, 337]."
+                }
+            ],
+
+            // The 5 cards under "Reasons I Love You"
+            reasons: [
+                { icon: "fa-face-laugh-beam", text: "Your smile that brightens my darkest days instantly." },
+                { icon: "fa-hand-holding-heart", text: "The deep, selfless way you care for everyone around you." },
+                { icon: "fa-star", text: "Your beautiful personality and brilliant, shining soul." },
+                { icon: "fa-wand-magic-sparkles", text: "The magic you bring to ordinary, everyday moments." },
+                { icon: "fa-heart", text: "Simply because you're you, my favorite human in the cosmos ❤️" }
+            ],
+
+            // Polaroid Photos Section - Paste image URLs.
+            // If empty, standard aesthetic drawings will show. [327]
+            galleryPhotos: [
+                {
+                    url: "", // e.g. "https://i.imgur.com/your-image-1.jpg"
+                    caption: "Your beautiful laugh ✨"
+                },
+                {
+                    url: "", // e.g. "https://i.imgur.com/your-image-2.jpg"
+                    caption: "Stolen moments 💖"
+                },
+                {
+                    url: "", // e.g. "https://i.imgur.com/your-image-3.jpg"
+                    caption: "My favorite sunset 🌅"
+                }
+            ],
+
+            // Optional background Spotify playlist embed [324].
+            // To add one, copy-paste your playlist/song share URL here!
+            bgMusicSpotifyURL: "https://open.spotify.com/playlist/37i9dQZF1DWWMOmoXKqHTD",
+
+            // Interactive button final message [6]
+            interactiveMessage: "If I had to choose again, I would still choose you. Every single time. ❤️",
+
+            // Final closing quote [7]
+            finalQuote: "You are my favorite person, my favorite memory, and my favorite future. ❤️"
+        };
+
+
+        /* -------------------------------------------------------------
+           ⚙️ WEBSITE ENGINE (HTML DOM POPULATION & CORE ANIMATIONS)
+           ------------------------------------------------------------- */
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initializeContent();
+            generateStars();
+            setupParticleSystem();
+            setupScrollAnimations();
+
+            // Calculate Day Counter [290]
+            if (config.anniversaryDate) {
+                const anniversary = new Date(config.anniversaryDate);
+                const today = new Date();
+                const diffTime = Math.abs(today - anniversary);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                document.getElementById("love-days-counter").innerText = diffDays;
+                document.getElementById("counter-label").innerText = config.counterLabel;
+            } else {
+                document.getElementById("milestone-box").style.display = "none";
+            }
+        });
+
+        // Populate elements dynamically from the configuration
+        function initializeContent() {
+            // Opening Greeting
+            document.getElementById("intro-greeting").innerText = `Hey, ${config.girlfriendName} ❤️`;
+            document.getElementById("intro-subtitle").innerText = config.introSubtitle;
+
+            // Love Letter Paragraphs
+            const letterWrapper = document.getElementById("letter-paragraphs-wrapper");
+            config.letterParagraphs.forEach(text => {
+                const p = document.createElement("p");
+                p.className = "serif-body";
+                p.innerText = text;
+                letterWrapper.appendChild(p);
+            });
+
+            // Timeline Items
+            const timelineWrapper = document.getElementById("timeline-wrapper");
+            config.timelineEvents.forEach((event, idx) => {
+                const isLeft = idx % 2 === 0;
+                const container = document.createElement("div");
+                container.className = `timeline-container ${isLeft ? 'timeline-left' : 'timeline-right'}`;
+
+                container.innerHTML = `
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date"><i class="fa-solid fa-calendar-day"></i> ${event.date}</div>
+                        <h3>${event.title}</h3>
+                        <p>${event.desc}</p>
+                    </div>
+                `;
+                timelineWrapper.appendChild(container);
+            });
+
+            // Reasons why grid
+            const reasonsWrapper = document.getElementById("reasons-grid-wrapper");
+            config.reasons.forEach(reason => {
+                const card = document.createElement("div");
+                card.className = "reason-card glass-card";
+                card.innerHTML = `
+                    <i class="fa-solid ${reason.icon} card-icon"></i>
+                    <h4>${reason.text}</h4>
+                `;
+                reasonsWrapper.appendChild(card);
+            });
+
+            // Polaroid Memory Gallery
+            const galleryWrapper = document.getElementById("gallery-wrapper");
+            config.galleryPhotos.forEach(photo => {
+                const frame = document.createElement("div");
+                frame.className = "polaroid";
+
+                let imgContent = `
+                    <div class="polaroid-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Paste Photo URL</span>
+                    </div>
+                `;
+                if (photo.url && photo.url.trim() !== "") {
+                    imgContent = `<img src="${photo.url}" alt="${photo.caption}">`;
+                }
+
+                frame.innerHTML = `
+                    <div class="polaroid-img-wrapper">
+                        ${imgContent}
+                    </div>
+                    <div class="polaroid-caption">${photo.caption}</div>
+                `;
+                galleryWrapper.appendChild(frame);
+            });
+
+            // Interactive Surprise Text
+            document.getElementById("secret-message-text").innerText = config.interactiveMessage;
+
+            // Final Quote
+            document.getElementById("final-closing-quote").innerText = `"${config.finalQuote}"`;
+
+            // Spotify Widget
+            if (config.bgMusicSpotifyURL && config.bgMusicSpotifyURL.trim() !== "") {
+                const cleanURL = config.bgMusicSpotifyURL.replace("spotify.com/", "spotify.com/embed/");
+                const spotifyContainer = document.getElementById("spotify-player-box");
+                spotifyContainer.innerHTML = `
+                    <iframe src="${cleanURL}" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+                `;
+            } else {
+                document.getElementById("spotify-player-box").style.display = "none";
+            }
+        }
+
+        // Render ambient stars background [317]
+        function generateStars() {
+            const container = document.getElementById("stars-container");
+            const starCount = window.innerWidth < 768 ? 60 : 130;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+
+        // Particle System for floating hearts and surprise confetti
+        const canvas = document.getElementById("particle-canvas");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+        let surpriseEmitterActive = false;
+
+        function setupParticleSystem() {
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas);
+
+            // Loop update frame
+            requestAnimationFrame(animateParticles);
+
+            // Spawning background ambient hearts slowly
+            setInterval(() => {
+                if (particles.length < 50) {
+                    particles.push(new HeartParticle(
+                        Math.random() * canvas.width,
+                        canvas.height + 20,
+                        Math.random() * 1.5 + 0.8, // Speed
+                        Math.random() * 15 + 8 // Size
+                    ));
+                }
+            }, 600);
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class HeartParticle {
+            constructor(x, y, speedY, size, explosion = false) {
+                this.x = x;
+                this.y = y;
+                this.speedY = explosion ? (Math.random() * -6 - 2) : -speedY;
+                this.speedX = explosion ? (Math.random() * 6 - 3) : (Math.sin(Math.random() * Math.PI) * 0.5);
+                this.size = size;
+                this.opacity = 1;
+                this.color = `rgba(255, ${Math.floor(Math.random() * 80 + 100)}, ${Math.floor(Math.random() * 60 + 130)}, `;
+                this.rotation = Math.random() * Math.PI;
+                this.rotSpeed = Math.random() * 0.02 - 0.01;
+                this.explosion = explosion;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotSpeed;
+
+                if (this.explosion) {
+                    this.opacity -= 0.015;
+                    this.speedY *= 0.98; // Drag
+                } else {
+                    // Floating upwards waves
+                    this.speedX += Math.sin(this.y * 0.01) * 0.02;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.globalAlpha = this.opacity;
+
+                // Draw Heart Path
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                // Top-left curve
+                ctx.bezierCurveTo(-this.size / 2, -this.size / 2, -this.size, this.size / 3, 0, this.size);
+                // Top-right curve
+                ctx.bezierCurveTo(this.size, this.size / 3, this.size / 2, -this.size / 2, 0, 0);
+
+                ctx.fillStyle = this.color + this.opacity + ')';
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Remove dead or out of bound particles
+                if (particles[i].y < -30 || particles[i].opacity <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Trigger explosion of heart particles when a surprise action is clicked
+        function triggerHeartExplosion(e) {
+            const rect = e.target.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 40; i++) {
+                particles.push(new HeartParticle(
+                    startX,
+                    startY,
+                    0,
+                    Math.random() * 18 + 10,
+                    true // Set as explosion particle
+                ));
+            }
+        }
+
+        /* --- BUTTON HANDLERS --- */
+
+        // Open surprise screen transition
+        document.getElementById("btn-open-surprise").addEventListener("click", (e) => {
+            triggerHeartExplosion(e);
+
+            // Beautiful delayed reveal sequence
+            setTimeout(() => {
+                const screen = document.getElementById("opening-screen");
+                screen.style.opacity = "0";
+
+                const content = document.getElementById("surprise-content");
+                content.style.display = "block";
+
+                setTimeout(() => {
+                    screen.style.visibility = "hidden";
+                    content.style.opacity = "1";
+
+                    // Trigger scroll anim once contents display
+                    triggerScrollCheck();
+                }, 1200);
+            }, 500);
+        });
+
+        // "One More Thing..." secret box trigger
+        document.getElementById("btn-reveal-secret").addEventListener("click", (e) => {
+            triggerHeartExplosion(e);
+
+            const wrapper = document.getElementById("secret-message-wrapper");
+            wrapper.classList.toggle("show");
+
+            if(wrapper.classList.contains("show")) {
+                e.target.innerHTML = 'With All My Heart <i class="fa-solid fa-heart"></i>';
+                // Trigger infinite explosion of hearts for 2 seconds
+                let intervalsCount = 0;
+                const interval = setInterval(() => {
+                    triggerHeartExplosion(e);
+                    intervalsCount++;
+                    if(intervalsCount > 6) clearInterval(interval);
+                }, 300);
+            } else {
+                e.target.innerHTML = 'Click Me <i class="fa-solid fa-wand-magic-sparkles"></i>';
+            }
+        });
+
+
+        /* --- INTERSECTION OBSERVER FOR SCROLL REVEALS --- */
+
+        function setupScrollAnimations() {
+            const options = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+
+                        // If it's the final section, reveal Spotify player
+                        if (entry.target.id === 'final-screen') {
+                            document.getElementById("spotify-player-box").classList.add("visible");
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            // Observe sections
+            document.querySelectorAll(".fade-in-section").forEach(sec => observer.observe(sec));
+            document.querySelectorAll(".timeline-container").forEach(item => observer.observe(item));
+            document.querySelectorAll(".reason-card").forEach(card => observer.observe(card));
+            document.querySelectorAll(".polaroid").forEach(photo => observer.observe(photo));
+        }
+
+        // Fallback checker if observer isn't triggered directly
+        function triggerScrollCheck() {
+            window.dispatchEvent(new Event('scroll'));
+        }
+    </script>
+</body>
