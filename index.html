@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Happy 8 Months, Babu ❤️ | Our Secret Romantic Garden</title>
+  <title>Happy 8 Months, Babu ❤️ | Our Endless Sunflower Garden</title>
   
-  <!-- Romantic & Devanagari Fonts -->
+  <!-- Premium Fonts for English, Hindi & Bengali -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Hind+Siliguri:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
@@ -19,27 +19,26 @@
     }
 
     :root {
-      --rose-dark: #4A040D;
-      --rose-deep: #6B0F1A;
+      --sunflower-gold: #FFB703;
+      --sunflower-yellow: #FFD000;
+      --sunflower-bright: #FFE169;
+      --sunflower-amber: #FB8500;
+      --sunflower-dark: #3A1E05;
+      --sunflower-brown: #5C320A;
+      
       --rose-crimson: #9B111E;
       --rose-ruby: #C9184A;
       --rose-coral: #FF4D6D;
       --rose-pink: #FF758F;
-      --rose-soft: #FFCCD5;
-      --rose-blush: #FFF0F3;
+      --rose-soft: #FFF3D6;
       
-      --gold-deep: #B8860B;
-      --gold-primary: #D4AF37;
-      --gold-light: #F9E79F;
-      --gold-glow: rgba(212, 175, 55, 0.45);
-      
-      --leaf-deep: #1B4332;
       --leaf-emerald: #2D6A4F;
       --leaf-sage: #52B788;
+      --leaf-deep: #1B4332;
       
-      --text-dark: #3A050E;
-      --text-gold: #9E782F;
-      --text-soft: #632626;
+      --text-dark: #2B1404;
+      --text-gold: #B37D14;
+      --text-soft: #63360B;
       
       --font-title: 'Great Vibes', cursive;
       --font-heading: 'Playfair Display', serif;
@@ -49,9 +48,9 @@
       --font-body: 'Cormorant Garamond', serif;
       --font-sans: 'Montserrat', sans-serif;
       
-      --glass-bg: rgba(255, 240, 243, 0.88);
-      --glass-border: rgba(212, 175, 55, 0.42);
-      --glass-shadow: 0 20px 50px rgba(107, 15, 26, 0.22), 0 0 35px rgba(255, 182, 193, 0.35);
+      --glass-bg: rgba(255, 248, 230, 0.90);
+      --glass-border: rgba(255, 183, 3, 0.50);
+      --glass-shadow: 0 20px 50px rgba(58, 30, 5, 0.35), 0 0 35px rgba(255, 208, 0, 0.30);
     }
 
     html {
@@ -60,7 +59,7 @@
     }
 
     body {
-      background-color: #120104;
+      background-color: #120701;
       color: var(--text-dark);
       font-family: var(--font-body);
       overflow-x: hidden;
@@ -69,7 +68,7 @@
       line-height: 1.6;
     }
 
-    .garden-master-bg {
+    .sunflower-ocean-bg {
       position: fixed;
       top: 0;
       left: 0;
@@ -78,12 +77,13 @@
       z-index: -3;
       pointer-events: none;
       background: 
-        radial-gradient(circle at 10% 20%, rgba(201, 24, 74, 0.38) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(155, 17, 30, 0.45) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(107, 15, 26, 0.8) 0%, #120104 100%);
+        radial-gradient(circle at 50% 15%, rgba(255, 208, 0, 0.45) 0%, transparent 60%),
+        radial-gradient(circle at 10% 85%, rgba(251, 133, 0, 0.38) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 183, 3, 0.42) 0%, transparent 50%),
+        linear-gradient(180deg, #1a0902 0%, #2c1404 45%, #120701 100%);
     }
 
-    .garden-layer-roses {
+    .sunflower-field-layer {
       position: fixed;
       top: 0;
       left: 0;
@@ -93,46 +93,47 @@
       pointer-events: none;
       opacity: 0.35;
       background-image: 
-        radial-gradient(circle at 50% 50%, #ff8fa3 1.5px, transparent 1.5px),
-        radial-gradient(circle at 20% 80%, #ffd700 1.2px, transparent 1.2px);
-      background-size: 70px 70px, 45px 45px;
+        radial-gradient(circle at 50% 50%, #ffd000 2px, transparent 2px),
+        radial-gradient(circle at 25% 75%, #fb8500 1.5px, transparent 1.5px),
+        radial-gradient(circle at 75% 25%, #ffe169 1.5px, transparent 1.5px);
+      background-size: 55px 55px, 35px 35px, 45px 45px;
     }
 
-    .garden-glow-orb {
+    .golden-glow-orb {
       position: fixed;
-      width: 350px;
-      height: 350px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-      filter: blur(80px);
+      filter: blur(90px);
       pointer-events: none;
       z-index: -1;
-      opacity: 0.45;
+      opacity: 0.5;
       animation: pulseGlow 10s ease-in-out infinite alternate;
     }
-    .glow-1 { top: -100px; left: -100px; background: rgba(255, 77, 109, 0.5); }
-    .glow-2 { bottom: -100px; right: -100px; background: rgba(212, 175, 55, 0.4); animation-delay: 4s; }
-    .glow-3 { top: 40%; left: 50%; transform: translate(-50%, -50%); background: rgba(201, 24, 74, 0.3); animation-delay: 2s; }
+    .orb-1 { top: -120px; left: -100px; background: rgba(255, 183, 3, 0.6); }
+    .orb-2 { bottom: -120px; right: -100px; background: rgba(251, 133, 0, 0.5); animation-delay: 4s; }
+    .orb-3 { top: 40%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 208, 0, 0.35); animation-delay: 2s; }
 
     @keyframes pulseGlow {
       0% { transform: scale(0.9); opacity: 0.35; }
-      100% { transform: scale(1.15); opacity: 0.55; }
+      100% { transform: scale(1.2); opacity: 0.6; }
     }
 
-    .floral-corner {
+    .sunflower-corner {
       position: fixed;
       pointer-events: none;
       z-index: 2;
-      opacity: 0.9;
-      filter: drop-shadow(0 8px 25px rgba(0,0,0,0.7));
+      opacity: 0.95;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
     }
-    .floral-corner-tl { top: -15px; left: -15px; width: 260px; }
-    .floral-corner-tr { top: -15px; right: -15px; width: 260px; transform: scaleX(-1); }
-    .floral-corner-bl { bottom: -15px; left: -15px; width: 240px; transform: scaleY(-1); }
-    .floral-corner-br { bottom: -15px; right: -15px; width: 240px; transform: scale(-1, -1); }
+    .sunflower-corner-tl { top: -15px; left: -15px; width: 270px; }
+    .sunflower-corner-tr { top: -15px; right: -15px; width: 270px; transform: scaleX(-1); }
+    .sunflower-corner-bl { bottom: -15px; left: -15px; width: 250px; transform: scaleY(-1); }
+    .sunflower-corner-br { bottom: -15px; right: -15px; width: 250px; transform: scale(-1, -1); }
 
     @media (max-width: 768px) {
-      .floral-corner-tl, .floral-corner-tr { width: 170px; }
-      .floral-corner-bl, .floral-corner-br { width: 150px; }
+      .sunflower-corner-tl, .sunflower-corner-tr { width: 175px; }
+      .sunflower-corner-bl, .sunflower-corner-br { width: 155px; }
     }
 
     #petals-canvas {
@@ -153,39 +154,35 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      background: rgba(45, 5, 14, 0.92);
+      background: rgba(35, 15, 3, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1.5px solid var(--gold-primary);
+      border: 1.5px solid var(--sunflower-gold);
       padding: 8px 18px 8px 10px;
       border-radius: 50px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px var(--gold-glow);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 20px rgba(255, 183, 3, 0.5);
       cursor: pointer;
       transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .audio-dock:hover {
       transform: scale(1.05) translateY(-2px);
-      box-shadow: 0 14px 40px rgba(201, 24, 74, 0.5), 0 0 25px var(--gold-primary);
+      box-shadow: 0 14px 40px rgba(251, 133, 0, 0.6), 0 0 25px var(--sunflower-yellow);
     }
     .vinyl-disc {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: radial-gradient(circle, #ffe6eb 12%, #c9184a 28%, #380309 68%, #d4af37 95%);
+      background: radial-gradient(circle, #fff3d6 12%, #ffb703 32%, #3a1e05 70%, #ffd000 95%);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 0 10px rgba(255, 183, 3, 0.7);
       transition: transform 0.5s ease;
     }
-    .vinyl-disc.spinning {
-      animation: spinVinyl 6s linear infinite;
-    }
-    @keyframes spinVinyl {
-      100% { transform: rotate(360deg); }
-    }
-    .vinyl-disc span { font-size: 17px; }
+    .vinyl-disc.spinning { animation: spinVinyl 6s linear infinite; }
+    @keyframes spinVinyl { 100% { transform: rotate(360deg); } }
+    .vinyl-disc span { font-size: 19px; }
     .audio-info { display: flex; flex-direction: column; }
     .audio-title {
       font-family: var(--font-bengali);
@@ -199,7 +196,7 @@
     }
     .audio-status {
       font-size: 11px;
-      color: var(--gold-light);
+      color: var(--sunflower-bright);
       display: flex;
       align-items: center;
       gap: 5px;
@@ -208,7 +205,7 @@
       display: inline-block;
       width: 3px;
       height: 10px;
-      background: var(--gold-primary);
+      background: var(--sunflower-gold);
       border-radius: 2px;
       animation: soundBars 0.8s ease-in-out infinite alternate;
     }
@@ -225,14 +222,14 @@
       position: fixed;
       bottom: 85px;
       right: 24px;
-      background: rgba(30, 3, 8, 0.96);
-      border: 1.5px solid var(--gold-primary);
+      background: rgba(30, 12, 2, 0.97);
+      border: 1.5px solid var(--sunflower-gold);
       border-radius: 20px;
       padding: 18px;
       width: 310px;
       z-index: 1001;
       display: none;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.85), 0 0 25px rgba(255, 183, 3, 0.4);
       font-family: var(--font-sans);
       color: #fff;
     }
@@ -243,45 +240,45 @@
     }
     #song-config-modal h4 {
       font-size: 14px;
-      color: var(--gold-light);
+      color: var(--sunflower-bright);
       margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .bengali-preset-btn {
-      background: rgba(201, 24, 74, 0.25);
-      border: 1px solid var(--rose-coral);
+      background: rgba(255, 183, 3, 0.18);
+      border: 1px solid var(--sunflower-amber);
       color: #fff;
       font-family: var(--font-bengali);
       font-size: 12px;
-      padding: 5px 8px;
+      padding: 6px 10px;
       border-radius: 8px;
-      margin: 3px 0;
+      margin: 4px 0;
       width: 100%;
       text-align: left;
       cursor: pointer;
       transition: all 0.2s ease;
     }
-    .bengali-preset-btn:hover { background: var(--rose-ruby); }
+    .bengali-preset-btn:hover { background: var(--sunflower-amber); color: #fff; }
     #song-config-modal input[type="file"], #song-config-modal input[type="text"] {
       width: 100%;
       margin: 6px 0;
       padding: 7px 10px;
       border-radius: 8px;
-      border: 1px solid #c9184a;
-      background: #200409;
+      border: 1px solid var(--sunflower-gold);
+      background: #1f0b02;
       color: #fff;
       font-size: 12px;
     }
     #song-config-modal button.apply-btn {
-      background: linear-gradient(135deg, var(--rose-ruby), var(--rose-crimson));
-      color: #fff;
-      border: 1px solid var(--gold-primary);
+      background: linear-gradient(135deg, var(--sunflower-amber), var(--sunflower-gold));
+      color: #1a0802;
+      border: 1px solid var(--sunflower-yellow);
       padding: 8px 12px;
       border-radius: 8px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       margin-top: 8px;
       width: 100%;
@@ -297,7 +294,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, #35040d 0%, #120104 100%);
+      background: radial-gradient(circle at center, #2e1403 0%, #100501 100%);
       transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.2s;
       padding: 20px;
     }
@@ -311,14 +308,14 @@
       position: relative;
       max-width: 680px;
       width: 100%;
-      background: rgba(255, 240, 243, 0.94);
+      background: rgba(255, 248, 230, 0.94);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
-      border: 2px solid var(--gold-primary);
-      border-radius: 32px;
+      border: 2.5px solid var(--sunflower-gold);
+      border-radius: 34px;
       padding: 50px 36px;
       text-align: center;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(212, 175, 55, 0.45);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 183, 3, 0.5);
       animation: floatSlow 6s ease-in-out infinite;
     }
 
@@ -331,8 +328,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, var(--rose-crimson), var(--rose-deep));
-      color: var(--gold-light);
+      background: linear-gradient(135deg, var(--sunflower-amber), var(--sunflower-dark));
+      color: var(--sunflower-bright);
       padding: 6px 22px;
       border-radius: 50px;
       font-size: 13px;
@@ -340,17 +337,17 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 20px;
-      border: 1px solid var(--gold-primary);
-      box-shadow: 0 4px 15px rgba(201, 24, 74, 0.4);
+      border: 1px solid var(--sunflower-gold);
+      box-shadow: 0 4px 15px rgba(251, 133, 0, 0.4);
     }
 
     .opening-title {
       font-family: var(--font-title);
       font-size: 46px;
-      color: var(--rose-deep);
+      color: var(--sunflower-dark);
       line-height: 1.25;
       margin-bottom: 12px;
-      text-shadow: 0 2px 8px rgba(201, 24, 74, 0.2);
+      text-shadow: 0 2px 8px rgba(251, 133, 0, 0.2);
     }
 
     .opening-subtitle {
@@ -365,10 +362,10 @@
     .opening-babu-tag {
       font-family: var(--font-title);
       font-size: 34px;
-      color: var(--gold-deep);
+      color: var(--sunflower-amber);
       margin-bottom: 20px;
       display: block;
-      text-shadow: 0 1px 4px rgba(212, 175, 55, 0.3);
+      text-shadow: 0 1px 4px rgba(255, 183, 3, 0.4);
     }
 
     .opening-hindi-line {
@@ -385,17 +382,17 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      background: linear-gradient(135deg, #c9184a, #800f2f, #4a040d);
+      background: linear-gradient(135deg, var(--sunflower-amber), #9e2a2b, #5c1d0a);
       color: #fff;
       font-family: var(--font-sans);
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 1px;
       padding: 16px 44px;
       border-radius: 50px;
-      border: 2px solid var(--gold-primary);
+      border: 2px solid var(--sunflower-gold);
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(201, 24, 74, 0.6), 0 0 25px var(--gold-glow);
+      box-shadow: 0 10px 30px rgba(251, 133, 0, 0.6), 0 0 25px rgba(255, 208, 0, 0.5);
       transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
@@ -407,7 +404,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
       transform: rotate(30deg);
       animation: shineBtn 3.5s infinite;
     }
@@ -417,7 +414,7 @@
     }
     .enter-btn:hover {
       transform: scale(1.06) translateY(-3px);
-      box-shadow: 0 15px 40px rgba(201, 24, 74, 0.8), 0 0 35px var(--gold-primary);
+      box-shadow: 0 15px 40px rgba(251, 133, 0, 0.8), 0 0 35px var(--sunflower-yellow);
     }
 
     .main-wrapper {
@@ -443,19 +440,19 @@
     }
     .romantic-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 25px 65px rgba(107, 15, 26, 0.28), 0 0 35px rgba(255, 182, 193, 0.4);
+      box-shadow: 0 25px 65px rgba(58, 30, 5, 0.4), 0 0 40px rgba(255, 208, 0, 0.4);
     }
 
-    .card-rose-accent {
+    .card-sunflower-accent {
       position: absolute;
       font-size: 26px;
-      opacity: 0.85;
-      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+      opacity: 0.9;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25));
     }
-    .cra-tl { top: 14px; left: 16px; }
-    .cra-tr { top: 14px; right: 16px; }
-    .cra-bl { bottom: 14px; left: 16px; }
-    .cra-br { bottom: 14px; right: 16px; }
+    .csa-tl { top: 14px; left: 16px; }
+    .csa-tr { top: 14px; right: 16px; }
+    .csa-bl { bottom: 14px; left: 16px; }
+    .csa-br { bottom: 14px; right: 16px; }
 
     .garden-header {
       text-align: center;
@@ -464,8 +461,8 @@
     .garden-subtitle-top {
       font-family: var(--font-title);
       font-size: 40px;
-      color: var(--gold-light);
-      text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+      color: var(--sunflower-bright);
+      text-shadow: 0 0 20px rgba(255, 208, 0, 0.9);
       margin-bottom: 8px;
     }
     .garden-main-title {
@@ -474,24 +471,24 @@
       color: #fff;
       font-weight: 800;
       letter-spacing: 1.5px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 35px rgba(201, 24, 74, 0.85);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 35px rgba(255, 183, 3, 0.9);
       margin-bottom: 14px;
     }
     .garden-anniversary-pill {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: rgba(45, 5, 14, 0.88);
-      border: 1px solid var(--gold-primary);
+      background: rgba(35, 15, 3, 0.9);
+      border: 1px solid var(--sunflower-gold);
       padding: 8px 24px;
       border-radius: 50px;
-      color: var(--gold-light);
+      color: var(--sunflower-bright);
       font-family: var(--font-sans);
       font-size: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
     }
     .garden-anniversary-pill strong {
-      color: #ff758f;
+      color: var(--sunflower-yellow);
       font-size: 15px;
     }
 
@@ -503,18 +500,18 @@
       flex-wrap: wrap;
     }
     .timer-block {
-      background: rgba(255, 240, 243, 0.92);
-      border: 1px solid var(--gold-primary);
+      background: rgba(255, 248, 230, 0.94);
+      border: 1.5px solid var(--sunflower-gold);
       border-radius: 18px;
       padding: 12px 18px;
       min-width: 90px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
     }
     .timer-num {
       font-family: var(--font-heading);
       font-size: 28px;
       font-weight: 800;
-      color: var(--rose-crimson);
+      color: var(--sunflower-amber);
       display: block;
       line-height: 1.1;
     }
@@ -530,9 +527,9 @@
     .message-heading {
       font-family: var(--font-title);
       font-size: 50px;
-      color: var(--rose-crimson);
+      color: var(--sunflower-dark);
       margin-bottom: 24px;
-      text-shadow: 0 2px 10px rgba(201, 24, 74, 0.2);
+      text-shadow: 0 2px 10px rgba(251, 133, 0, 0.25);
     }
     .message-hindi-poem {
       font-family: var(--font-hindi-poetic);
@@ -545,8 +542,8 @@
     }
 
     .quote-card {
-      background: linear-gradient(135deg, rgba(255, 240, 243, 0.95), rgba(255, 220, 230, 0.92));
-      border: 2px solid var(--gold-primary);
+      background: linear-gradient(135deg, rgba(255, 248, 230, 0.96), rgba(255, 236, 179, 0.92));
+      border: 2.5px solid var(--sunflower-gold);
       position: relative;
       overflow: visible;
     }
@@ -555,14 +552,14 @@
       top: -35px;
       left: 50%;
       transform: translateX(-50%);
-      background: #170104;
-      border: 2px solid var(--gold-primary);
-      color: var(--gold-light);
-      padding: 6px 22px;
+      background: #1c0a02;
+      border: 2px solid var(--sunflower-gold);
+      color: var(--sunflower-bright);
+      padding: 6px 24px;
       border-radius: 50px;
       font-family: var(--font-title);
       font-size: 26px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -570,8 +567,8 @@
     }
     .quote-symbol {
       font-size: 55px;
-      color: var(--gold-deep);
-      opacity: 0.35;
+      color: var(--sunflower-gold);
+      opacity: 0.45;
       line-height: 0;
       margin: 20px 0 10px 0;
       display: block;
@@ -580,11 +577,11 @@
     .quote-hindi-text {
       font-family: var(--font-hindi-poetic);
       font-size: 26px;
-      color: var(--rose-deep);
+      color: var(--sunflower-dark);
       line-height: 1.85;
       font-weight: 600;
       margin: 15px 0 25px 0;
-      text-shadow: 0 1px 4px rgba(212, 175, 55, 0.3);
+      text-shadow: 0 1px 4px rgba(255, 183, 3, 0.35);
     }
     .orbiting-heart {
       position: absolute;
@@ -597,15 +594,15 @@
     .oh-4 { bottom: 20px; right: 30px; animation-delay: 3s; }
 
     @keyframes orbitFloat {
-      0% { transform: translateY(0) scale(0.9); opacity: 0.6; }
-      100% { transform: translateY(-12px) scale(1.2); opacity: 1; filter: drop-shadow(0 0 10px #ff4d6d); }
+      0% { transform: translateY(0) scale(0.9); opacity: 0.7; }
+      100% { transform: translateY(-12px) scale(1.2); opacity: 1; filter: drop-shadow(0 0 10px #ffd000); }
     }
 
     .gallery-title-box { margin-bottom: 30px; }
     .gallery-title {
       font-family: var(--font-title);
-      font-size: 46px;
-      color: var(--rose-crimson);
+      font-size: 48px;
+      color: var(--sunflower-dark);
       margin-bottom: 6px;
     }
     .gallery-subtitle {
@@ -618,33 +615,33 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 26px;
       margin-top: 25px;
     }
     .photo-frame {
       position: relative;
       background: #fff;
-      border: 3px solid var(--gold-light);
+      border: 3.5px solid var(--sunflower-gold);
       border-radius: 22px;
       padding: 10px;
-      box-shadow: 0 10px 25px rgba(107, 15, 26, 0.15), 0 0 15px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 25px rgba(58, 30, 5, 0.25), 0 0 18px rgba(255, 183, 3, 0.35);
       cursor: pointer;
       overflow: hidden;
       transition: all 0.35s ease;
     }
     .photo-frame:hover {
       transform: translateY(-8px) scale(1.02);
-      border-color: var(--gold-primary);
-      box-shadow: 0 18px 40px rgba(201, 24, 74, 0.35), 0 0 25px var(--gold-glow);
+      border-color: var(--sunflower-amber);
+      box-shadow: 0 18px 40px rgba(251, 133, 0, 0.45), 0 0 25px var(--sunflower-yellow);
     }
     .photo-img-wrap {
       width: 100%;
-      height: 230px;
+      height: 250px;
       border-radius: 14px;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(135deg, #ffd1dc, #ffe6eb);
+      background: linear-gradient(135deg, #fff3d6, #ffe169);
     }
     .photo-img-wrap img {
       width: 100%;
@@ -652,45 +649,21 @@
       object-fit: cover;
       transition: transform 0.6s ease;
     }
-    .photo-frame:hover .photo-img-wrap img {
-      transform: scale(1.08);
-    }
+    .photo-frame:hover .photo-img-wrap img { transform: scale(1.08); }
     .photo-frame-decor {
       position: absolute;
       bottom: 8px;
       right: 8px;
-      font-size: 18px;
+      font-size: 20px;
       z-index: 2;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
     }
     .photo-caption-bar {
       margin-top: 10px;
       font-family: var(--font-bengali);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--rose-deep);
-    }
-
-    .gallery-upload-trigger {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 25px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px dashed var(--gold-primary);
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-family: var(--font-sans);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--rose-crimson);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .gallery-upload-trigger:hover {
-      background: #fff;
-      border-color: var(--rose-ruby);
-      transform: scale(1.03);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--sunflower-dark);
     }
 
     #lightbox-modal {
@@ -699,9 +672,9 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(15, 2, 5, 0.94);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      background: rgba(18, 7, 1, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       z-index: 2000;
       display: none;
       align-items: center;
@@ -713,14 +686,14 @@
     #lightbox-modal.active { display: flex; opacity: 1; }
     .lightbox-content {
       position: relative;
-      max-width: 580px;
+      max-width: 600px;
       width: 100%;
       background: var(--glass-bg);
-      border: 2px solid var(--gold-primary);
-      border-radius: 24px;
-      padding: 18px;
+      border: 2.5px solid var(--sunflower-gold);
+      border-radius: 26px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px var(--gold-primary);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.85), 0 0 45px var(--sunflower-yellow);
       animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     @keyframes modalPop {
@@ -729,7 +702,7 @@
     }
     .lightbox-img-holder {
       width: 100%;
-      max-height: 60vh;
+      max-height: 65vh;
       border-radius: 16px;
       overflow: hidden;
       background: #000;
@@ -737,27 +710,27 @@
     .lightbox-img-holder img {
       width: 100%;
       height: 100%;
-      max-height: 60vh;
+      max-height: 65vh;
       object-fit: contain;
     }
     .lightbox-caption {
       margin-top: 15px;
       font-family: var(--font-bengali);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--rose-crimson);
+      color: var(--sunflower-amber);
     }
     .lightbox-close {
       position: absolute;
       top: -16px;
       right: -16px;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       background: #fff;
-      color: var(--rose-deep);
-      border: 2px solid var(--gold-primary);
+      color: var(--sunflower-dark);
+      border: 2px solid var(--sunflower-gold);
       border-radius: 50%;
-      font-size: 18px;
+      font-size: 19px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -766,45 +739,45 @@
     }
 
     .letter-card {
-      background: #fffbf9;
+      background: #fffdf5;
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(201, 24, 74, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 10% 10%, rgba(255, 183, 3, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(251, 133, 0, 0.10) 0%, transparent 40%);
       border: 2px solid #e2c275;
-      border-radius: 26px;
+      border-radius: 28px;
       padding: 55px 42px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25), inset 0 0 40px rgba(226, 194, 117, 0.25);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3), inset 0 0 40px rgba(255, 236, 179, 0.35);
       position: relative;
     }
     .letter-stamp {
       position: absolute;
       top: 25px;
       right: 30px;
-      width: 58px;
-      height: 68px;
-      border: 2px dashed var(--gold-primary);
+      width: 60px;
+      height: 70px;
+      border: 2px dashed var(--sunflower-gold);
       padding: 4px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 240, 243, 0.8);
-      border-radius: 6px;
+      background: rgba(255, 248, 230, 0.85);
+      border-radius: 8px;
       transform: rotate(6deg);
     }
-    .letter-stamp span { font-size: 24px; }
-    .letter-stamp small { font-size: 9px; font-weight: 700; color: var(--rose-crimson); }
+    .letter-stamp span { font-size: 26px; }
+    .letter-stamp small { font-size: 9px; font-weight: 700; color: var(--sunflower-dark); }
 
     .letter-heading {
       font-family: var(--font-title);
       font-size: 48px;
-      color: var(--rose-deep);
+      color: var(--sunflower-dark);
       margin-bottom: 25px;
     }
     .letter-body {
       font-family: var(--font-hindi-poetic);
       font-size: 21px;
-      color: #381519;
+      color: #381e05;
       line-height: 2;
       text-align: left;
       white-space: pre-line;
@@ -815,34 +788,34 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(135deg, #a71d2a, #6b0f1a);
-      color: var(--gold-light);
-      padding: 10px 28px;
+      background: linear-gradient(135deg, var(--sunflower-amber), #9e2a2b);
+      color: #fff;
+      padding: 10px 30px;
       border-radius: 50px;
-      border: 2px solid var(--gold-primary);
+      border: 2px solid var(--sunflower-gold);
       font-family: var(--font-title);
-      font-size: 24px;
-      box-shadow: 0 6px 20px rgba(107, 15, 26, 0.4);
+      font-size: 25px;
+      box-shadow: 0 6px 20px rgba(58, 30, 5, 0.5);
     }
 
     .showcase-card {
-      background: linear-gradient(135deg, rgba(65, 5, 16, 0.96), rgba(25, 2, 6, 0.96));
-      border: 2.5px solid var(--gold-primary);
+      background: linear-gradient(135deg, rgba(45, 18, 3, 0.97), rgba(20, 7, 1, 0.97));
+      border: 2.5px solid var(--sunflower-gold);
       border-radius: 34px;
       padding: 60px 35px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.85), 0 0 55px rgba(201, 24, 74, 0.65), inset 0 0 30px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.85), 0 0 55px rgba(255, 183, 3, 0.6), inset 0 0 30px rgba(255, 208, 0, 0.3);
     }
-    .showcase-rose-cluster {
+    .showcase-sunflower-cluster {
       display: flex;
       justify-content: center;
       gap: 15px;
-      font-size: 34px;
+      font-size: 36px;
       margin-bottom: 20px;
-      animation: pulseFlowers 3s ease-in-out infinite alternate;
+      animation: pulseSunflowers 3s ease-in-out infinite alternate;
     }
-    @keyframes pulseFlowers {
+    @keyframes pulseSunflowers {
       0% { transform: scale(0.95); }
-      100% { transform: scale(1.08); filter: drop-shadow(0 0 12px #ff4d6d); }
+      100% { transform: scale(1.1); filter: drop-shadow(0 0 12px #ffd000); }
     }
     .showcase-hindi-text {
       font-family: var(--font-hindi-hand);
@@ -850,24 +823,24 @@
       color: #fff;
       line-height: 1.95;
       font-weight: 700;
-      text-shadow: 0 0 18px rgba(255, 182, 193, 0.7), 0 2px 8px rgba(0,0,0,0.8);
+      text-shadow: 0 0 18px rgba(255, 208, 0, 0.7), 0 2px 8px rgba(0,0,0,0.8);
       white-space: pre-line;
       margin: 15px 0;
     }
     .showcase-hindi-gold {
-      color: var(--gold-light);
-      text-shadow: 0 0 22px rgba(249, 231, 159, 0.85);
+      color: var(--sunflower-bright);
+      text-shadow: 0 0 22px rgba(255, 225, 105, 0.9);
     }
 
     .surprise-card {
-      background: rgba(255, 240, 243, 0.95);
-      border: 2px solid var(--gold-primary);
+      background: rgba(255, 248, 230, 0.95);
+      border: 2.5px solid var(--sunflower-gold);
       position: relative;
     }
     .surprise-title {
       font-family: var(--font-title);
       font-size: 48px;
-      color: var(--rose-crimson);
+      color: var(--sunflower-dark);
       margin-bottom: 8px;
     }
     .surprise-prompt {
@@ -887,42 +860,40 @@
       align-items: center;
       cursor: pointer;
     }
-    .big-rose-svg {
-      width: 145px;
-      height: 145px;
+    .big-sunflower-svg {
+      width: 150px;
+      height: 150px;
       transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      filter: drop-shadow(0 10px 25px rgba(201, 24, 74, 0.5));
+      filter: drop-shadow(0 10px 25px rgba(255, 183, 3, 0.6));
     }
-    .rose-bloom-btn-wrap:hover .big-rose-svg {
-      transform: scale(1.12) rotate(5deg);
+    .rose-bloom-btn-wrap:hover .big-sunflower-svg {
+      transform: scale(1.14) rotate(8deg);
     }
-    .rose-petal-path {
+    .sunflower-petal {
       transform-origin: center;
       transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .rose-bloomed .petal-outer-1 { transform: scale(1.3) rotate(-15deg); }
-    .rose-bloomed .petal-outer-2 { transform: scale(1.35) rotate(15deg); }
-    .rose-bloomed .petal-outer-3 { transform: scale(1.4) translateY(-8px); }
-    .rose-bloomed .petal-mid { transform: scale(1.25); }
-    .rose-bloomed .big-rose-svg {
-      filter: drop-shadow(0 0 35px #ff4d6d) drop-shadow(0 0 50px var(--gold-primary));
-      transform: scale(1.22);
+    .rose-bloomed .sf-petal-outer { transform: scale(1.3) rotate(15deg); }
+    .rose-bloomed .sf-petal-mid { transform: scale(1.25) rotate(-10deg); }
+    .rose-bloomed .big-sunflower-svg {
+      filter: drop-shadow(0 0 35px #ffd000) drop-shadow(0 0 55px var(--sunflower-amber));
+      transform: scale(1.25);
     }
 
     .tap-hint {
       margin-top: 14px;
       font-family: var(--font-sans);
       font-size: 13px;
-      color: var(--rose-crimson);
-      font-weight: 600;
+      color: var(--sunflower-dark);
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 7px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 22px;
       border-radius: 30px;
-      border: 1px solid var(--gold-light);
+      border: 1.5px solid var(--sunflower-gold);
       animation: pulseBtn 2s infinite;
     }
     @keyframes pulseBtn {
@@ -934,7 +905,7 @@
       display: none;
       margin-top: 30px;
       padding-top: 25px;
-      border-top: 2px dashed var(--gold-primary);
+      border-top: 2px dashed var(--sunflower-gold);
       animation: fadeInReveal 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
     @keyframes fadeInReveal {
@@ -945,7 +916,7 @@
     .surprise-hindi-choice {
       font-family: var(--font-hindi-poetic);
       font-size: 26px;
-      color: var(--rose-deep);
+      color: var(--sunflower-dark);
       line-height: 1.85;
       font-weight: 700;
       margin-bottom: 22px;
@@ -953,7 +924,7 @@
     .surprise-infinity {
       font-family: var(--font-heading);
       font-size: 32px;
-      color: var(--rose-crimson);
+      color: var(--sunflower-amber);
       font-weight: 800;
       margin-bottom: 20px;
       letter-spacing: 1px;
@@ -961,7 +932,7 @@
     .surprise-final-promise {
       font-family: var(--font-title);
       font-size: 40px;
-      color: var(--gold-deep);
+      color: var(--sunflower-dark);
       line-height: 1.3;
       margin-top: 10px;
     }
@@ -969,12 +940,12 @@
     .garden-footer {
       text-align: center;
       margin-top: 40px;
-      color: var(--gold-light);
+      color: var(--sunflower-bright);
       font-family: var(--font-sans);
       font-size: 14px;
       letter-spacing: 1px;
     }
-    .garden-footer strong { color: #ff758f; }
+    .garden-footer strong { color: var(--sunflower-yellow); }
 
     #fireworks-canvas {
       position: fixed;
@@ -1008,64 +979,84 @@
 </head>
 <body>
 
-  <!-- MASTER FLORAL BACKGROUND -->
-  <div class="garden-master-bg"></div>
-  <div class="garden-layer-roses"></div>
-  <div class="garden-glow-orb glow-1"></div>
-  <div class="garden-glow-orb glow-2"></div>
-  <div class="garden-glow-orb glow-3"></div>
+  <!-- MASTER SUNFLOWER OCEAN BACKGROUND -->
+  <div class="sunflower-ocean-bg"></div>
+  <div class="sunflower-field-layer"></div>
+  <div class="golden-glow-orb orb-1"></div>
+  <div class="golden-glow-orb orb-2"></div>
+  <div class="golden-glow-orb orb-3"></div>
 
-  <!-- CORNER FLORAL GARLANDS -->
-  <svg class="floral-corner floral-corner-tl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 10 C 60 20, 100 60, 120 120 C 130 150, 160 180, 190 190" stroke="#2d6a4f" stroke-width="4" stroke-linecap="round"/>
-    <path d="M5 25 C 40 45, 70 85, 80 140" stroke="#1b4332" stroke-width="3" stroke-linecap="round"/>
-    <path d="M50 25 C 65 15, 80 25, 70 40 C 60 45, 45 35, 50 25 Z" fill="#40916c"/>
-    <path d="M95 70 C 115 60, 125 75, 115 90 C 100 95, 90 80, 95 70 Z" fill="#52b788"/>
-    <path d="M30 75 C 20 95, 35 110, 50 100 C 55 85, 40 70, 30 75 Z" fill="#2d6a4f"/>
-    <circle cx="35" cy="35" r="24" fill="#9b111e"/>
-    <circle cx="35" cy="35" r="18" fill="#c9184a"/>
-    <circle cx="35" cy="35" r="12" fill="#ff4d6d"/>
-    <circle cx="35" cy="35" r="6" fill="#ffccd5"/>
-    <circle cx="110" cy="50" r="18" fill="#c9184a"/>
-    <circle cx="110" cy="50" r="12" fill="#ff758f"/>
-    <circle cx="110" cy="50" r="6" fill="#fff0f3"/>
-    <circle cx="50" cy="115" r="16" fill="#e63946"/>
-    <circle cx="50" cy="115" r="10" fill="#ff8fa3"/>
-    <circle cx="50" cy="115" r="5" fill="#fff"/>
-    <polygon points="80,20 83,28 91,31 83,34 80,42 77,34 69,31 77,28" fill="#d4af37"/>
-    <polygon points="140,110 142,116 148,118 142,120 140,126 138,120 132,118 138,116" fill="#ffd700"/>
+  <!-- CORNER SUNFLOWER GARLANDS -->
+  <svg class="sunflower-corner sunflower-corner-tl" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 C 60 20, 110 60, 130 130 C 140 160, 170 190, 205 205" stroke="#2d6a4f" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M50 25 C 70 15, 85 25, 75 45 C 65 50, 45 40, 50 25 Z" fill="#40916c"/>
+    <path d="M105 75 C 125 65, 135 80, 125 95 C 110 100, 100 85, 105 75 Z" fill="#52b788"/>
+    
+    <g transform="translate(45, 45)">
+      <path d="M0 -36 C -7 -20, -12 -5, 0 0 C 12 -5, 7 -20, 0 -36 Z" fill="#ffd000"/>
+      <path d="M25 -25 C 14 -14, 5 -3, 0 0 C 14 5, 25 14, 36 0 Z" fill="#ffb703"/>
+      <path d="M36 0 C 20 7, 5 12, 0 0 C 5 -12, 20 -7, 36 0 Z" fill="#ffd000"/>
+      <path d="M25 25 C 14 14, 3 5, 0 0 C -5 14, -14 25, 0 36 Z" fill="#ffb703"/>
+      <path d="M0 36 C 7 20, 12 5, 0 0 C -12 5, -7 20, 0 36 Z" fill="#ffd000"/>
+      <path d="M-25 25 C -14 14, -5 3, 0 0 C -14 -5, -25 -14, -36 0 Z" fill="#ffb703"/>
+      <path d="M-36 0 C -20 -7, -5 -12, 0 0 C -5 12, -20 7, -36 0 Z" fill="#ffd000"/>
+      <path d="M-25 -25 C -14 -14, -3 -5, 0 0 C 5 -14, 14 -25, 0 -36 Z" fill="#ffb703"/>
+      <path d="M18 -32 C 8 -18, 2 -5, 0 0 C 10 -2, 22 -15, 18 -32 Z" fill="#ffe169"/>
+      <path d="M32 -18 C 18 -8, 5 -2, 0 0 C 2 -10, 15 -22, 32 -18 Z" fill="#ffd000"/>
+      <path d="M32 18 C 18 8, 5 2, 0 0 C 2 10, 15 22, 32 18 Z" fill="#ffe169"/>
+      <path d="M18 32 C 8 18, 2 5, 0 0 C -10 2, -22 15, -18 32 Z" fill="#ffd000"/>
+      <path d="M-18 32 C -8 18, -2 5, 0 0 C -10 -2, -22 -15, -18 32 Z" fill="#ffe169"/>
+      <path d="M-32 18 C -18 8, -5 2, 0 0 C -2 10, -15 22, -32 18 Z" fill="#ffd000"/>
+      <path d="M-32 -18 C -18 -8, -5 -2, 0 0 C -2 -10, -15 -22, -32 -18 Z" fill="#ffe169"/>
+      <path d="M-18 -32 C -8 -18, -2 -5, 0 0 C 10 -2, 22 -15, 18 -32 Z" fill="#ffd000"/>
+      <circle cx="0" cy="0" r="16" fill="#3a1e05"/>
+      <circle cx="0" cy="0" r="13" fill="#5c320a"/>
+      <circle cx="0" cy="0" r="9" fill="#241202"/>
+      <circle cx="0" cy="0" r="5" fill="#ffd000" opacity="0.4"/>
+    </g>
+
+    <g transform="translate(125, 60) scale(0.65)">
+      <circle cx="0" cy="0" r="28" fill="#ffd000"/>
+      <circle cx="0" cy="0" r="20" fill="#fb8500"/>
+      <circle cx="0" cy="0" r="12" fill="#3a1e05"/>
+    </g>
+
+    <polygon points="90,20 93,28 101,31 93,34 90,42 87,34 79,31 87,28" fill="#ffd000"/>
+    <polygon points="150,120 152,126 158,128 152,130 150,136 148,130 142,128 148,126" fill="#ffe169"/>
   </svg>
 
-  <svg class="floral-corner floral-corner-tr" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 10 C 60 20, 100 60, 120 120 C 130 150, 160 180, 190 190" stroke="#2d6a4f" stroke-width="4" stroke-linecap="round"/>
-    <path d="M50 25 C 65 15, 80 25, 70 40 C 60 45, 45 35, 50 25 Z" fill="#40916c"/>
-    <circle cx="35" cy="35" r="24" fill="#9b111e"/>
-    <circle cx="35" cy="35" r="18" fill="#c9184a"/>
-    <circle cx="35" cy="35" r="12" fill="#ff4d6d"/>
-    <circle cx="35" cy="35" r="6" fill="#ffccd5"/>
-    <circle cx="110" cy="50" r="18" fill="#c9184a"/>
-    <circle cx="110" cy="50" r="12" fill="#ff758f"/>
-    <polygon points="80,20 83,28 91,31 83,34 80,42 77,34 69,31 77,28" fill="#d4af37"/>
+  <svg class="sunflower-corner sunflower-corner-tr" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 C 60 20, 110 60, 130 130 C 140 160, 170 190, 205 205" stroke="#2d6a4f" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M50 25 C 70 15, 85 25, 75 45 C 65 50, 45 40, 50 25 Z" fill="#40916c"/>
+    <g transform="translate(45, 45)">
+      <circle cx="0" cy="0" r="32" fill="#ffd000"/>
+      <circle cx="0" cy="0" r="24" fill="#ffb703"/>
+      <circle cx="0" cy="0" r="15" fill="#3a1e05"/>
+      <circle cx="0" cy="0" r="10" fill="#5c320a"/>
+    </g>
+    <polygon points="90,20 93,28 101,31 93,34 90,42 87,34 79,31 87,28" fill="#ffd000"/>
   </svg>
 
-  <svg class="floral-corner floral-corner-bl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 10 C 60 20, 100 60, 120 120 C 130 150, 160 180, 190 190" stroke="#2d6a4f" stroke-width="4" stroke-linecap="round"/>
-    <path d="M50 25 C 65 15, 80 25, 70 40 C 60 45, 45 35, 50 25 Z" fill="#40916c"/>
-    <circle cx="35" cy="35" r="22" fill="#800f2f"/>
-    <circle cx="35" cy="35" r="15" fill="#c9184a"/>
-    <circle cx="35" cy="35" r="8" fill="#ff758f"/>
-    <circle cx="100" cy="60" r="16" fill="#ff4d6d"/>
-    <circle cx="100" cy="60" r="9" fill="#fff0f3"/>
-    <polygon points="70,30 72,36 78,38 72,40 70,46 68,40 62,38 68,36" fill="#d4af37"/>
+  <svg class="sunflower-corner sunflower-corner-bl" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 C 60 20, 110 60, 130 130 C 140 160, 170 190, 205 205" stroke="#2d6a4f" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M50 25 C 70 15, 85 25, 75 45 C 65 50, 45 40, 50 25 Z" fill="#40916c"/>
+    <g transform="translate(45, 45)">
+      <circle cx="0" cy="0" r="30" fill="#ffd000"/>
+      <circle cx="0" cy="0" r="22" fill="#fb8500"/>
+      <circle cx="0" cy="0" r="14" fill="#3a1e05"/>
+    </g>
+    <polygon points="80,30 82,36 88,38 82,40 80,46 78,40 72,38 78,36" fill="#ffd000"/>
   </svg>
 
-  <svg class="floral-corner floral-corner-br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 10 C 60 20, 100 60, 120 120 C 130 150, 160 180, 190 190" stroke="#2d6a4f" stroke-width="4" stroke-linecap="round"/>
-    <path d="M50 25 C 65 15, 80 25, 70 40 C 60 45, 45 35, 50 25 Z" fill="#40916c"/>
-    <circle cx="35" cy="35" r="22" fill="#800f2f"/>
-    <circle cx="35" cy="35" r="15" fill="#c9184a"/>
-    <circle cx="35" cy="35" r="8" fill="#ff758f"/>
-    <polygon points="70,30 72,36 78,38 72,40 70,46 68,40 62,38 68,36" fill="#d4af37"/>
+  <svg class="sunflower-corner sunflower-corner-br" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 C 60 20, 110 60, 130 130 C 140 160, 170 190, 205 205" stroke="#2d6a4f" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M50 25 C 70 15, 85 25, 75 45 C 65 50, 45 40, 50 25 Z" fill="#40916c"/>
+    <g transform="translate(45, 45)">
+      <circle cx="0" cy="0" r="30" fill="#ffd000"/>
+      <circle cx="0" cy="0" r="22" fill="#fb8500"/>
+      <circle cx="0" cy="0" r="14" fill="#3a1e05"/>
+    </g>
+    <polygon points="80,30 82,36 88,38 82,40 80,46 78,40 72,38 78,36" fill="#ffd000"/>
   </svg>
 
   <canvas id="petals-canvas"></canvas>
@@ -1074,7 +1065,7 @@
   <!-- FLOATING AUDIO DOCK -->
   <div class="audio-dock" id="audioDock" title="Click to play / pause romantic Bengali music">
     <div class="vinyl-disc" id="vinylDisc">
-      <span>🌸</span>
+      <span>🌻</span>
     </div>
     <div class="audio-info">
       <div class="audio-title" id="audioTitleDisplay">তুমি যাকে ভালোবাসো (Bengali Romantic Song)</div>
@@ -1085,20 +1076,20 @@
         <span id="audioStatusText" style="margin-left:4px;">Music Paused</span>
       </div>
     </div>
-    <span style="font-size:16px; margin-left:4px; opacity:0.75;" id="songSettingsBtn" title="Choose Bengali Song or Upload MP3">⚙️</span>
+    <span style="font-size:16px; margin-left:4px; opacity:0.8;" id="songSettingsBtn" title="Choose Bengali Song or Upload MP3">⚙️</span>
   </div>
 
   <div id="song-config-modal">
     <h4><span>🎵 Romantic Bengali Songs</span> <span style="cursor:pointer;" onclick="toggleSongSettings()">✕</span></h4>
-    <p style="font-size:11px; opacity:0.8; margin-bottom:8px;">Choose a romantic Bengali song title or upload your audio file:</p>
+    <p style="font-size:11px; opacity:0.85; margin-bottom:8px;">Choose a romantic Bengali song title or upload your audio file:</p>
     
-    <button class="bengali-preset-btn" onclick="selectPresetSong('তুমি যাকে ভালোবাসো (Tumi Jaake Bhalobasho)')">❤️ তুমি যাকে ভালোবাসো (Tumi Jaake Bhalobasho)</button>
-    <button class="bengali-preset-btn" onclick="selectPresetSong('মন মাঝি রে (Mon Majhi Re)')">🌹 মন মাঝি রে (Mon Majhi Re)</button>
-    <button class="bengali-preset-btn" onclick="selectPresetSong('তোমাকে চাই (Tomake Chai)')">🌸 তোমাকে চাই (Tomake Chai)</button>
+    <button class="bengali-preset-btn" onclick="selectPresetSong('তুমি যাকে ভালোবাসো (Tumi Jaake Bhalobasho)')">🌻 তুমি যাকে ভালোবাসো (Tumi Jaake Bhalobasho)</button>
+    <button class="bengali-preset-btn" onclick="selectPresetSong('মন মাঝি রে (Mon Majhi Re)')">💛 মন মাঝি রে (Mon Majhi Re)</button>
+    <button class="bengali-preset-btn" onclick="selectPresetSong('তোমাকে চাই (Tomake Chai)')">✨ তোমাকে চাই (Tomake Chai)</button>
     <button class="bengali-preset-btn" onclick="selectPresetSong('বোঝে না সে বোঝে না (Bojhena Shey Bojhena)')">💖 বোঝে না সে বোঝে না</button>
 
-    <div style="margin-top:8px; border-top: 1px dashed rgba(212,175,55,0.4); padding-top:8px;">
-      <p style="font-size:11px; opacity:0.8;">Upload local MP3 or paste direct audio link:</p>
+    <div style="margin-top:8px; border-top: 1px dashed rgba(255,183,3,0.4); padding-top:8px;">
+      <p style="font-size:11px; opacity:0.85;">Upload local MP3 or paste direct audio link:</p>
       <input type="file" id="audioFileInput" accept="audio/*" />
       <input type="text" id="audioUrlInput" placeholder="Paste Direct MP3 URL here..." />
       <button class="apply-btn" onclick="applyCustomAudio()">Play Custom Song 🎶</button>
@@ -1112,17 +1103,17 @@
   <!-- OPENING SCREEN -->
   <div id="opening-screen">
     <div class="opening-card">
-      <span class="cra-tl card-rose-accent">🌹</span>
-      <span class="cra-tr card-rose-accent">🌸</span>
-      <span class="cra-bl card-rose-accent">🌸</span>
-      <span class="cra-br card-rose-accent">🌹</span>
+      <span class="csa-tl card-sunflower-accent">🌻</span>
+      <span class="csa-tr card-sunflower-accent">🌻</span>
+      <span class="csa-bl card-sunflower-accent">🌻</span>
+      <span class="csa-br card-sunflower-accent">🌻</span>
 
-      <div class="opening-badge">✨ An Eternal Garden of Love ✨</div>
+      <div class="opening-badge">✨ An Endless Sunflower Ocean ✨</div>
       
       <span class="opening-babu-tag">For My Dearest Babu 💖</span>
 
       <h1 class="opening-title">For The Most Beautiful Person In My World ❤️</h1>
-      <h2 class="opening-subtitle">8 Months of Us 🌹</h2>
+      <h2 class="opening-subtitle">8 Months of Us 🌻</h2>
       
       <p class="opening-hindi-line">
         “आठ महीने बीत गए… लेकिन तुम्हें देखकर आज भी दिल पहली बार जैसा ही धड़कता है। ❤️”
@@ -1130,7 +1121,7 @@
 
       <button class="enter-btn" id="enterHeartBtn">
         <span>Enter My Heart ❤️</span>
-        <span>🌹</span>
+        <span>🌻</span>
       </button>
     </div>
   </div>
@@ -1140,8 +1131,8 @@
 
     <!-- HEADER / JOURNEY MILESTONE -->
     <header class="garden-header">
-      <div class="garden-subtitle-top">Welcome to Our Secret Garden</div>
-      <h1 class="garden-main-title">8 MONTHS OF PURE LOVE 🌹</h1>
+      <div class="garden-subtitle-top">Welcome to Our Sunflower Kingdom</div>
+      <h1 class="garden-main-title">8 MONTHS OF PURE LOVE 🌻</h1>
       
       <div class="garden-anniversary-pill">
         <span>📅 Celebrating Since: <strong id="annivDatePlaceholder">19 June</strong></span>
@@ -1171,10 +1162,10 @@
 
     <!-- SECTION 1: MAIN ROMANTIC MESSAGE -->
     <section class="romantic-card">
-      <span class="cra-tl card-rose-accent">🌹</span>
-      <span class="cra-tr card-rose-accent">🌹</span>
-      <span class="cra-bl card-rose-accent">🌸</span>
-      <span class="cra-br card-rose-accent">🌸</span>
+      <span class="csa-tl card-sunflower-accent">🌻</span>
+      <span class="csa-tr card-sunflower-accent">🌻</span>
+      <span class="csa-bl card-sunflower-accent">🌻</span>
+      <span class="csa-br card-sunflower-accent">🌻</span>
 
       <h2 class="message-heading">Happy 8 Months, My Love ❤️</h2>
       
@@ -1189,9 +1180,9 @@
     <!-- SECTION 2: ROMANTIC QUOTE -->
     <section class="romantic-card quote-card">
       <div class="quote-wreath">
-        <span>🌹</span>
+        <span>🌻</span>
         <span>A Promise of Love</span>
-        <span>🌹</span>
+        <span>🌻</span>
       </div>
 
       <span class="orbiting-heart oh-1">💖</span>
@@ -1210,54 +1201,68 @@
       <span class="quote-symbol" style="line-height:1; transform: rotate(180deg); display:inline-block;">“</span>
     </section>
 
-    <!-- SECTION 3: FLORAL PHOTO GALLERY -->
+    <!-- SECTION 3: PHOTO GALLERY (EXACT 4 USER PHOTOS) -->
     <section class="romantic-card">
-      <span class="cra-tl card-rose-accent">🌸</span>
-      <span class="cra-tr card-rose-accent">🌸</span>
-      <span class="cra-bl card-rose-accent">🌹</span>
-      <span class="cra-br card-rose-accent">🌹</span>
+      <span class="csa-tl card-sunflower-accent">🌻</span>
+      <span class="csa-tr card-sunflower-accent">🌻</span>
+      <span class="csa-bl card-sunflower-accent">🌻</span>
+      <span class="csa-br card-sunflower-accent">🌻</span>
 
       <div class="gallery-title-box">
-        <h2 class="gallery-title">Our Beautiful Memories 🌹</h2>
+        <h2 class="gallery-title">Our Beautiful Memories 🌻</h2>
         <div class="gallery-subtitle">Every Second With You Is A Treasure</div>
       </div>
 
       <div class="gallery-grid" id="photoGalleryGrid">
-        <div class="photo-frame" onclick="openLightbox('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=800&auto=format&fit=crop', 'My favorite smile ❤️')">
+        
+        <div class="photo-frame" onclick="openLightbox('WhatsApp Image 2026-08-24 at 6.21.12 PM.jpeg', 'My favorite smile ❤️')">
           <div class="photo-img-wrap">
-            <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=800&auto=format&fit=crop" alt="My favorite smile" loading="lazy">
-            <span class="photo-frame-decor">🌹</span>
+            <img src="WhatsApp Image 2026-08-24 at 6.21.12 PM.jpeg" 
+                 alt="My favorite smile" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='photo1.jpeg';">
+            <span class="photo-frame-decor">🌻</span>
           </div>
           <div class="photo-caption-bar">My favorite smile ❤️</div>
         </div>
 
-        <div class="photo-frame" onclick="openLightbox('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop', 'My favorite person 🌹')">
+        <div class="photo-frame" onclick="openLightbox('WhatsApp Image 2026-08-24 at 6.21.20 PM.jpeg', 'My favorite person 🌻')">
           <div class="photo-img-wrap">
-            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop" alt="My favorite person" loading="lazy">
+            <img src="WhatsApp Image 2026-08-24 at 6.21.20 PM.jpeg" 
+                 alt="My favorite person" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='photo2.jpeg';">
             <span class="photo-frame-decor">💖</span>
           </div>
-          <div class="photo-caption-bar">My favorite person 🌹</div>
+          <div class="photo-caption-bar">My favorite person 🌻</div>
         </div>
 
-        <div class="photo-frame" onclick="openLightbox('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop', 'One of my favorite memories.')">
+        <div class="photo-frame" onclick="openLightbox('WhatsApp Image 2026-08-24 at 6.21.21 PM (1).jpeg', 'One of my favorite memories.')">
           <div class="photo-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Favorite memory" loading="lazy">
-            <span class="photo-frame-decor">🌸</span>
+            <img src="WhatsApp Image 2026-08-24 at 6.21.21 PM (1).jpeg" 
+                 alt="One of my favorite memories" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='photo3.jpeg';">
+            <span class="photo-frame-decor">✨</span>
           </div>
           <div class="photo-caption-bar">One of my favorite memories.</div>
         </div>
 
-        <div class="photo-frame" onclick="openLightbox('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop', 'A moment I wish could last forever.')">
+        <div class="photo-frame" onclick="openLightbox('WhatsApp Image 2026-08-24 at 6.21.21 PM (2).jpeg', 'A moment I wish could last forever.')">
           <div class="photo-img-wrap">
-            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop" alt="Eternal moment" loading="lazy">
-            <span class="photo-frame-decor">✨</span>
+            <img src="WhatsApp Image 2026-08-24 at 6.21.21 PM (2).jpeg" 
+                 alt="A moment I wish could last forever" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='photo4.jpeg';">
+            <span class="photo-frame-decor">🌻</span>
           </div>
           <div class="photo-caption-bar">A moment I wish could last forever.</div>
         </div>
+
       </div>
 
-      <label class="gallery-upload-trigger" for="userPhotoUploadInput">
-        <span>📸 Click to upload & add your real photos here</span>
+      <label class="gallery-upload-trigger" for="userPhotoUploadInput" style="display:inline-flex; align-items:center; gap:8px; margin-top:25px; background:rgba(255,255,255,0.9); border:1.5px dashed var(--sunflower-gold); padding:10px 24px; border-radius:50px; font-family:var(--font-sans); font-size:13px; font-weight:700; color:var(--sunflower-dark); cursor:pointer;">
+        <span>📸 Tap to select / update images from your device</span>
       </label>
       <input type="file" id="userPhotoUploadInput" accept="image/*" multiple style="display:none;" onchange="handleUserPhotoUpload(event)">
     </section>
@@ -1297,54 +1302,52 @@ Happy 8 Months, My Love. 🌹
 
     <!-- SECTION 5: SPECIAL ROMANTIC LINE -->
     <section class="showcase-card">
-      <div class="showcase-rose-cluster">
-        <span>🌹</span>
-        <span>🌸</span>
-        <span>🌹</span>
-        <span>🌸</span>
-        <span>🌹</span>
+      <div class="showcase-sunflower-cluster">
+        <span>🌻</span>
+        <span>💛</span>
+        <span>🌻</span>
+        <span>💛</span>
+        <span>🌻</span>
       </div>
 
       <div class="showcase-hindi-text">
 “फूलों से भी खूबसूरत है तुम्हारा होना,
 मेरी हर खुशी की वजह है तुम्हारा होना।
 आठ महीने क्या…
-<span class="showcase-hindi-gold">मुझे तो हर जन्म तुम्हारे साथ होना है। ❤️🌹</span>”
+<span class="showcase-hindi-gold">मुझे तो हर जन्म तुम्हारे साथ होना है। ❤️🌻</span>”
       </div>
 
-      <div style="font-family: var(--font-title); font-size: 32px; color: var(--gold-light); margin-top: 15px;">
-        ~ You & Me, Forever ~
+      <div style="font-family: var(--font-title); font-size: 34px; color: var(--sunflower-bright); margin-top: 15px;">
+        ~ You & Me, In Our Crore of Sunflowers ~
       </div>
     </section>
 
-    <!-- SECTION 6: FINAL SURPRISE & BLOOMING ROSE -->
+    <!-- SECTION 6: FINAL SURPRISE & BLOOMING SUNFLOWER -->
     <section class="romantic-card surprise-card">
-      <span class="cra-tl card-rose-accent">🌹</span>
-      <span class="cra-tr card-rose-accent">🌹</span>
-      <span class="cra-bl card-rose-accent">🌹</span>
-      <span class="cra-br card-rose-accent">🌹</span>
+      <span class="csa-tl card-sunflower-accent">🌻</span>
+      <span class="csa-tr card-sunflower-accent">🌻</span>
+      <span class="csa-bl card-sunflower-accent">🌻</span>
+      <span class="csa-br card-sunflower-accent">🌻</span>
 
-      <h2 class="surprise-title">One last thing… 🌹</h2>
+      <h2 class="surprise-title">One last thing… 🌻</h2>
       <div class="surprise-prompt">A special secret hidden just for you</div>
 
       <div class="rose-bloom-btn-wrap" id="roseBloomBtn" onclick="bloomTheRose()">
-        <svg class="big-rose-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 85 C 40 95, 20 85, 25 70 C 30 55, 45 70, 50 85 Z" fill="#2d6a4f" class="rose-petal-path"/>
-          <path d="M50 85 C 60 95, 80 85, 75 70 C 70 55, 55 70, 50 85 Z" fill="#40916c" class="rose-petal-path"/>
+        <svg class="big-sunflower-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 85 C 40 95, 20 85, 25 70 C 30 55, 45 70, 50 85 Z" fill="#2d6a4f" class="sunflower-petal"/>
+          <path d="M50 85 C 60 95, 80 85, 75 70 C 70 55, 55 70, 50 85 Z" fill="#40916c" class="sunflower-petal"/>
           
-          <path d="M50 65 C 20 65, 10 35, 30 20 C 45 10, 50 30, 50 65 Z" fill="#9b111e" class="rose-petal-path petal-outer-1"/>
-          <path d="M50 65 C 80 65, 90 35, 70 20 C 55 10, 50 30, 50 65 Z" fill="#c9184a" class="rose-petal-path petal-outer-2"/>
-          <path d="M30 45 C 30 15, 70 15, 70 45 C 70 65, 30 65, 30 45 Z" fill="#e63946" class="rose-petal-path petal-outer-3"/>
+          <circle cx="50" cy="45" r="32" fill="#ffd000" class="sunflower-petal sf-petal-outer"/>
+          <circle cx="50" cy="45" r="26" fill="#ffb703" class="sunflower-petal sf-petal-mid"/>
+          <circle cx="50" cy="45" r="20" fill="#fb8500" class="sunflower-petal"/>
           
-          <path d="M38 48 C 35 30, 65 30, 62 48 C 60 60, 40 60, 38 48 Z" fill="#ff4d6d" class="rose-petal-path petal-mid"/>
-          <path d="M42 45 C 40 35, 60 35, 58 45 C 55 52, 45 52, 42 45 Z" fill="#ff758f" class="rose-petal-path"/>
-          
-          <circle cx="50" cy="45" r="7" fill="#ffccd5" class="rose-petal-path"/>
-          <circle cx="50" cy="45" r="3" fill="#fff0f3" class="rose-petal-path"/>
+          <circle cx="50" cy="45" r="14" fill="#3a1e05" class="sunflower-petal"/>
+          <circle cx="50" cy="45" r="10" fill="#5c320a" class="sunflower-petal"/>
+          <circle cx="50" cy="45" r="6" fill="#ffd000" opacity="0.5" class="sunflower-petal"/>
         </svg>
 
         <div class="tap-hint" id="bloomTapHint">
-          <span>✨ Tap the rose to bloom my heart ✨</span>
+          <span>✨ Tap the sunflower to bloom my heart ✨</span>
         </div>
       </div>
 
@@ -1360,12 +1363,12 @@ Forever To Go… ♾️
         </div>
 
         <div class="surprise-final-promise">
-“I Love You, My Love. 🌹<br/>
+“I Love You, My Love. 🌻<br/>
 More than words can ever explain.”
         </div>
         
-        <div style="margin-top: 25px; font-family: var(--font-bengali); font-size: 18px; color: var(--rose-crimson); font-weight: 700;">
-          তুমি আমার জীবনের সবচেয়ে সুন্দর উপহার, বাবু ❤️🌹
+        <div style="margin-top: 25px; font-family: var(--font-bengali); font-size: 19px; color: var(--sunflower-amber); font-weight: 700;">
+          তুমি আমার জীবনের সবচেয়ে সুন্দর উপহার, বাবু ❤️🌻
         </div>
       </div>
     </section>
@@ -1488,6 +1491,9 @@ More than words can ever explain.”
         if (audioEl.src) audioEl.pause();
         synthMusic.stop();
         isMusicPlaying = false;
+        updateif (audioEl.src) audioEl.pause();
+        synthMusic.stop();
+        isMusicPlaying = false;
         updateAudioUI(false);
       }
     }
@@ -1546,7 +1552,7 @@ More than words can ever explain.”
       toggleSongSettings();
     }
 
-    /* OPENING TRANSITION */
+    /* Opening transition */
     document.getElementById('enterHeartBtn').addEventListener('click', () => {
       const opening = document.getElementById('opening-screen');
       opening.classList.add('opened');
@@ -1559,7 +1565,7 @@ More than words can ever explain.”
       }, 300);
     });
 
-    /* PETALS CANVAS ENGINE */
+    /* Petals canvas engine */
     const pCanvas = document.getElementById('petals-canvas');
     const pCtx = pCanvas.getContext('2d');
     let width = pCanvas.width = window.innerWidth;
@@ -1570,9 +1576,9 @@ More than words can ever explain.”
       height = pCanvas.height = window.innerHeight;
     });
 
-    const petalColors = ['#ff4d6d', '#ff758f', '#c9184a', '#ffb3c1', '#fff0f3', '#ffd700'];
+    const petalColors = ['#ffd000', '#ffb703', '#fb8500', '#ffe169', '#ff4d6d', '#fff3d6'];
     const petals = [];
-    const totalPetals = 45;
+    const totalPetals = 48;
 
     class Petal {
       constructor() {
@@ -1582,240 +1588,8 @@ More than words can ever explain.”
       reset(init = false) {
         this.x = Math.random() * width;
         this.y = init ? Math.random() * height : -20;
-        this.size = 9 + Math.random() * 14;
+        this.size = 10 + Math.random() * 15;
         this.speedY = 1 + Math.random() * 1.8;
-        this.speedX = -0.5 + Math.random() * 1.2;
+        this.speedX = -0.6 + Math.random() * 1.4;
         this.color = petalColors[Math.floor(Math.random() * petalColors.length)];
-        this.angle = Math.random() * Math.PI * 2;
-        this.spinSpeed = (Math.random() - 0.5) * 0.04;
-        this.wobble = Math.random() * Math.PI * 2;
-        this.wobbleSpeed = 0.02 + Math.random() * 0.03;
-        this.opacity = 0.5 + Math.random() * 0.45;
-      }
-
-      update() {
-        this.wobble += this.wobbleSpeed;
-        this.x += this.speedX + Math.sin(this.wobble) * 1.1;
-        this.y += this.speedY;
-        this.angle += this.spinSpeed;
-
-        if (this.y > height + 20 || this.x < -30 || this.x > width + 30) {
-          this.reset();
-        }
-      }
-
-      draw() {
-        pCtx.save();
-        pCtx.translate(this.x, this.y);
-        pCtx.rotate(this.angle);
-        pCtx.globalAlpha = this.opacity;
-
-        pCtx.beginPath();
-        pCtx.fillStyle = this.color;
-        pCtx.moveTo(0, 0);
-        pCtx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, 0, 0, this.size);
-        pCtx.bezierCurveTo(-this.size, 0, -this.size / 2, -this.size / 2, 0, 0);
-        pCtx.fill();
-
-        pCtx.restore();
-      }
-    }
-
-    for (let i = 0; i < totalPetals; i++) {
-      petals.push(new Petal());
-    }
-
-    const burstParticles = [];
-    function burstPetalsAt(x, y, count = 25) {
-      for (let i = 0; i < count; i++) {
-        const angle = Math.random() * Math.PI * 2;
-        const speed = 2 + Math.random() * 7;
-        burstParticles.push({
-          x: x,
-          y: y,
-          vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed - 1,
-          size: 7 + Math.random() * 12,
-          color: petalColors[Math.floor(Math.random() * petalColors.length)],
-          rotation: Math.random() * Math.PI * 2,
-          spin: (Math.random() - 0.5) * 0.1,
-          alpha: 1,
-          decay: 0.015 + Math.random() * 0.02
-        });
-      }
-    }
-
-    window.addEventListener('click', (e) => {
-      burstPetalsAt(e.clientX, e.clientY, 8);
-    });
-
-    function animatePetals() {
-      pCtx.clearRect(0, 0, width, height);
-
-      petals.forEach(p => {
-        p.update();
-        p.draw();
-      });
-
-      for (let i = burstParticles.length - 1; i >= 0; i--) {
-        const bp = burstParticles[i];
-        bp.x += bp.vx;
-        bp.y += bp.vy;
-        bp.vy += 0.08;
-        bp.rotation += bp.spin;
-        bp.alpha -= bp.decay;
-
-        if (bp.alpha <= 0) {
-          burstParticles.splice(i, 1);
-          continue;
-        }
-
-        pCtx.save();
-        pCtx.translate(bp.x, bp.y);
-        pCtx.rotate(bp.rotation);
-        pCtx.globalAlpha = bp.alpha;
-        pCtx.fillStyle = bp.color;
-        pCtx.beginPath();
-        pCtx.arc(0, 0, bp.size / 2, 0, Math.PI * 2);
-        pCtx.fill();
-        pCtx.restore();
-      }
-
-      requestAnimationFrame(animatePetals);
-    }
-    animatePetals();
-
-    /* BLOOMING ROSE & FIREWORKS */
-    let isRoseBloomed = false;
-    const fwCanvas = document.getElementById('fireworks-canvas');
-    const fwCtx = fwCanvas.getContext('2d');
-    fwCanvas.width = window.innerWidth;
-    fwCanvas.height = window.innerHeight;
-
-    function bloomTheRose() {
-      if (isRoseBloomed) return;
-      isRoseBloomed = true;
-
-      const roseBtn = document.getElementById('roseBloomBtn');
-      roseBtn.classList.add('rose-bloomed');
-
-      const tapHint = document.getElementById('bloomTapHint');
-      tapHint.style.display = 'none';
-
-      const rect = roseBtn.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      burstPetalsAt(cx, cy, 70);
-
-      launchHeartFireworks(cx, cy);
-
-      setTimeout(() => {
-        document.getElementById('revealed-surprise-content').style.display = 'block';
-        document.getElementById('revealed-surprise-content').scrollIntoView({ behavior: 'smooth' });
-      }, 700);
-    }
-
-    const fwSparks = [];
-    function launchHeartFireworks(x, y) {
-      for (let i = 0; i < 80; i++) {
-        const t = Math.random() * Math.PI * 2;
-        const hx = 16 * Math.pow(Math.sin(t), 3);
-        const hy = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-        const mag = 0.15 + Math.random() * 0.35;
-
-        fwSparks.push({
-          x: x,
-          y: y,
-          vx: hx * mag + (Math.random() - 0.5) * 1.5,
-          vy: hy * mag + (Math.random() - 0.5) * 1.5,
-          color: petalColors[Math.floor(Math.random() * petalColors.length)],
-          size: 3 + Math.random() * 4,
-          alpha: 1,
-          decay: 0.012 + Math.random() * 0.015
-        });
-      }
-    }
-
-    function animateFireworks() {
-      fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
-
-      for (let i = fwSparks.length - 1; i >= 0; i--) {
-        const s = fwSparks[i];
-        s.x += s.vx;
-        s.y += s.vy;
-        s.vy += 0.04;
-        s.alpha -= s.decay;
-
-        if (s.alpha <= 0) {
-          fwSparks.splice(i, 1);
-          continue;
-        }
-
-        fwCtx.save();
-        fwCtx.globalAlpha = s.alpha;
-        fwCtx.fillStyle = s.color;
-        fwCtx.shadowBlur = 10;
-        fwCtx.shadowColor = s.color;
-        fwCtx.beginPath();
-        fwCtx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-        fwCtx.fill();
-        fwCtx.restore();
-      }
-
-      requestAnimationFrame(animateFireworks);
-    }
-    animateFireworks();
-
-    /* LIGHTBOX & PHOTO UPLOAD */
-    function openLightbox(src, caption) {
-      const modal = document.getElementById('lightbox-modal');
-      const img = document.getElementById('lightboxImg');
-      const cap = document.getElementById('lightboxCaption');
-
-      img.src = src;
-      cap.textContent = caption;
-      modal.classList.add('active');
-    }
-
-    function closeLightbox(e) {
-      const modal = document.getElementById('lightbox-modal');
-      modal.classList.remove('active');
-    }
-
-    function handleUserPhotoUpload(event) {
-      const files = event.target.files;
-      if (!files || files.length === 0) return;
-
-      const galleryGrid = document.getElementById('photoGalleryGrid');
-      const customCaptions = [
-        "My favorite smile ❤️",
-        "My favorite person 🌹",
-        "One of my favorite memories.",
-        "A moment I wish could last forever.",
-        "Every second with you is magic ✨",
-        "Forever and always my Babu 💕"
-      ];
-
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const url = URL.createObjectURL(file);
-        const caption = customCaptions[i % customCaptions.length];
-
-        const frame = document.createElement('div');
-        frame.className = 'photo-frame';
-        frame.onclick = () => openLightbox(url, caption);
-
-        frame.innerHTML = `
-          <div class="photo-img-wrap">
-            <img src="${url}" alt="Our Memory" loading="lazy">
-            <span class="photo-frame-decor">🌹</span>
-          </div>
-          <div class="photo-caption-bar">${caption}</div>
-        `;
-
-        galleryGrid.prepend(frame);
-      }
-    }
-  </script>
-</body>
-</html>
+        this.angle = Math.random() * Math
